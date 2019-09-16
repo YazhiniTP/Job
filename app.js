@@ -26,6 +26,7 @@ const app = express();
 
 //7 separte file for users route
 const users = require('./routes/users');
+const candidates = require('./routes/candidates');
 
 //2 port number
 const port = 3000;
@@ -50,6 +51,7 @@ require('./config/passport')(passport);
 
 //8 use user routes
 app.use('/users', users);
+app.use('/dashboard', candidates);
 
 //4 cannot get / -> cause no route to home page, add route
 app.get('/', (req, res) => {
@@ -58,6 +60,10 @@ app.get('/', (req, res) => {
 
 app.post('/', (req, res) => {
     res.send('POST request to the homepage')
+});
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public/index.html'));
 });
 
 //3 app list to specified port, callback with arrow function
