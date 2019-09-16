@@ -1,0 +1,19 @@
+.card {
+  max-width: 200px;
+  font-family: "Goudy Old Style";
+}
+
+.cardList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.cardList > * {
+  box-sizing: border-box;
+}
+
+.cardList > *:not(:last-child) {
+  margin-right: 32px;
+}

@@ -1,0 +1,13 @@
+<h1>Candidate</h1>
+<div class="cardList">
+  <div *ngFor="let candidate of candidates">
+    <mat-card class="card">
+      <mat-card-content>
+        <h2>{{candidate.name}}</h2>
+        <h2>{{candidate.position}}</h2>
+        <h2>{{candidate.status}}</h2>
+      </mat-card-content>
+    </mat-card>
+    <br>
+  </div>
+</div>
